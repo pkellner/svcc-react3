@@ -23,6 +23,10 @@ namespace WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddNodeServices(options => {
+                options.LaunchWithDebugging = true;
+                options.DebuggingPort = 9229;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
